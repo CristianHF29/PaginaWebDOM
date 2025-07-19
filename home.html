@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CineMax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/assets/icono.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .movie-img {
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            object-fit: cover;
+            border-radius: .5rem .5rem 0 0;
+        }
+
+        .hover-zoom {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-zoom:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <h1 class="fw-bold mb-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-film"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z" />
+                </svg>
+                CineMax
+            </h1>
+            <p class="mb-0 text-muted">Donde cada historia cobra vida en la pantalla</p>
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-semibold" href="#">Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/pages/billboard.html">Cartelera</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Estrenos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Promociones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Video -->
+    <div class="p-3 my-5">
+        <div class="position-relative rounded overflow-hidden">
+            <video id="videoTrailer" src="assets/superman.mp4" autoplay muted loop playsinline class="w-100 rounded">
+            </video>
+
+            <!-- Botón flotante -->
+            <button id="toggleSoundBtn" class="btn btn-light position-absolute top-0 end-0 m-3 rounded-circle shadow-sm"
+                style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-volume-mute-fill"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <main class="container my-5">
+        <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+            <!-- Película 1 -->
+            <div class="col">
+                <a href="pages/details.html?id=1">
+                    <div class="card shadow-sm border-0">
+                        <img src="assets/superman.png" class="card-img-top movie-img img-fluid rounded hover-zoom"
+                            alt="Superman">
+                    </div>
+                </a>
+            </div>
+
+            <!-- Película 2 -->
+            <div class="col">
+                <a href="pages/details.html?id=2">
+                    <div class="card shadow-sm border-0">
+                        <img src="assets/4fantasticos.png"
+                            class="card-img-top movie-img img-fluid rounded-top hover-zoom" alt="4Fantasticos">
+                    </div>
+                </a>
+            </div>
+
+            <!-- Película 3 -->
+            <div class="col">
+                <a href="pages/details.html?id=3">
+                    <div class="card shadow-sm border-0">
+                        <img src="assets/world.png" class="card-img-top movie-img img-fluid rounded-top hover-zoom"
+                            alt="Jurassic World">
+                    </div>
+                </a>
+            </div>
+
+            <!-- Película 4 -->
+            <div class="col">
+                <a href="pages/details.html?id=3">
+                    <div class="card shadow-sm border-0">
+                        <img src="assets/pitufos.png" class="card-img-top movie-img img-fluid rounded-top hover-zoom"
+                            alt="Pitufos">
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-4 border-top mt-5">
+        <div class="container">
+            <p class="mb-1 fw-semibold">© 2025 CineMax</p>
+            <small class="text-muted">San Salvador, El Salvador · contacto@cinemax.com</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/details.js"></script>
+</body>
+
+</html>
