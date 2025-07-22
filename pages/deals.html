@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>CineMax</title>
@@ -30,8 +29,7 @@
 </head>
 
 <body>
-
-    <!-- Header -->
+    
     <header class="bg-dark text-white py-4">
         <div class="container text-center">
             <a href="/home.html" class="text-decoration-none text-light">
@@ -48,10 +46,9 @@
         </div>
     </header>
 
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-semibold" href="#">Inicio</a>
+            <a class="navbar-brand fw-semibold" href="../home.html">Inicio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -59,94 +56,26 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="/pages/billboard.html">Cartelera</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Estrenos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/pages/deals.html">Promociones</a></li>
+                    <li class="nav-item"><a class="nav-link text-bg-dark rounded" href="/pages/deals.html">Promociones</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Slideshow Gallery -->
-    <div class="gallery-container">
-        <div class="mySlides"> 
-            <img src="/assets/banner-superman.jpg" style="width: 100%;">
-        </div>
-
-        <div class="mySlides">
-            <img src="/assets/banner-4fans.jpg" style="width: 100%;">
-        </div>
-
-        <div class="mySlides">
-            <img src="/assets/banner-ikwydls.jpg" style="width: 100%;">
-        </div>
-
-        <div class="mySlides">
-            <img src="/assets/banner-jurassicpark.jpg" style="width: 100%;">
-        </div>
-
-        <a class="prev" onclick="plusSlides(-1)">&#8249;</a>
-        <a class="next" onclick="plusSlides(1)">&#8250;</a>
-
-    </div>
-
-    <!-- Video -->
-    <div class="p-3 my-5">
-        <div class="position-relative rounded overflow-hidden">
-            <video id="videoTrailer" src="assets/superman.mp4" autoplay muted loop playsinline class="w-100 rounded">
-            </video>
-
-            <!-- Botón flotante -->
-            <button id="toggleSoundBtn" class="btn btn-light position-absolute top-0 end-0 m-3 rounded-circle shadow-sm"
-                style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
-                <i class="bi bi-volume-mute-fill"></i>
-            </button>
-        </div>
-    </div>
-
-    <!-- Main -->
-    <main class="container my-5">
-        <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-            <!-- Película 1 -->
-            <div class="col">
-                <a href="pages/details.html?id=1">
-                    <div class="card shadow-sm border-0">
-                        <img src="assets/superman.png" class="card-img-top movie-img img-fluid rounded hover-zoom"
-                            alt="Superman">
-                    </div>
-                </a>
+    <main>
+        <section class="container">
+            <div class="row p-3">
+                <button type="button" onclick="Snacks()" class="col-lg-6 col-md-6 btn" id="snacks-btn">Dulceria</button>
+                <button type="button" onclick="Billboard()" class="col-lg-6 col-md-6 btn" id="billboard-btn">Cartelera</button>
             </div>
-
-            <!-- Película 2 -->
-            <div class="col">
-                <a href="pages/details.html?id=2">
-                    <div class="card shadow-sm border-0">
-                        <img src="assets/4fantasticos.png"
-                            class="card-img-top movie-img img-fluid rounded-top hover-zoom" alt="4Fantasticos">
-                    </div>
-                </a>
+            
+            <div class="container card-container row" id="card-container">
+                
             </div>
+        </section>
 
-            <!-- Película 3 -->
-            <div class="col">
-                <a href="pages/details.html?id=3">
-                    <div class="card shadow-sm border-0">
-                        <img src="assets/world.png" class="card-img-top movie-img img-fluid rounded-top hover-zoom"
-                            alt="Jurassic World">
-                    </div>
-                </a>
-            </div>
 
-            <!-- Película 4 -->
-            <div class="col">
-                <a href="pages/details.html?id=4">
-                    <div class="card shadow-sm border-0">
-                        <img src="assets/pitufos.png" class="card-img-top movie-img img-fluid rounded-top hover-zoom"
-                            alt="Pitufos">
-                    </div>
-                </a>
-            </div>
-
-        </div>
     </main>
 
     <!-- Footer -->
@@ -217,7 +146,7 @@
                     <h4 class="fw-bold">Sobre CineMax</h4>
                     <hr style="width: 50%; margin: 0 auto; border: thin solid whitesmoke;" class="my-2">
                     <ul class="list-inline">
-                        <li><a href="#" class="link-underline-light link-underline-opacity-0 link-underline-opacity-100-hover" style="color: white;">Promociones</a></li>
+                        <li><a href="#" class="link-underline-light link-underline-opacity-0 link-underline-opacity-100-hover" style="color: white;">Promociones</a></li>                       
                         <li><a href="#" class="link-underline-light link-underline-opacity-0 link-underline-opacity-100-hover" style="color: white;">Contacto</a></li>
                     </ul>
                 </div>
@@ -227,7 +156,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/details.js"></script>
-    <script src="/js/slidegallery.js"></script>
+    <script src="/js/deals.js"></script>
 </body>
-
 </html>
