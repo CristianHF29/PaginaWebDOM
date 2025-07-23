@@ -1,21 +1,24 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+let current = 0;
+  const slides = document.querySelectorAll('.slide');
 
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-
-function showSlides(n) {
-  let slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) {
+        slide.classList.add('active');
+      }
+    });
   }
 
-  slides[slideIndex-1].style.display = "block";
- 
-  
-} 
+  function changeSlide(n) {
+    current = (current + n + slides.length) % slides.length;
+    showSlide(current);
+  }
+
+  // Auto cambio cada 5 segundos
+  setInterval(() => {
+    changeSlide(1);
+  }, 5000);
+
+  // Mostrar el primero al inicio
+  showSlide(current);
