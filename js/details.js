@@ -115,3 +115,72 @@ document.addEventListener("DOMContentLoaded", () => {
         if (el) el.textContent = value;
     });
 });
+
+// Escuchar formulario
+document.getElementById("formReserva").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const sala = document.getElementById("sala");
+    const tipoSala = sala.value;
+    const precio = parseFloat(sala.options[sala.selectedIndex].dataset.precio);
+    const cantidad = parseInt(document.getElementById("cantidad").value);
+    const idioma = document.querySelector('input[name="idioma"]:checked').value;
+    const total = (precio * cantidad).toFixed(2);
+
+    // Obtener nombre de la película desde el DOM
+    const titulo = document.getElementById("title").textContent;
+
+    // Crear HTML de resumen
+    const resumenHTML = `
+        <p><strong>🎬 Película:</strong> ${titulo}</p>
+        <p><strong>Sala:</strong> ${tipoSala}</p>
+        <p><strong>Idioma:</strong> ${idioma}</p>
+        <p><strong>Entradas:</strong> ${cantidad}</p>
+        <p><strong>Total a pagar:</strong> $${total}</p>
+    `;
+
+    // Insertar en modal de confirmación
+    document.getElementById("infoCompra").innerHTML = resumenHTML;
+
+    // Cerrar modal de selección
+    const modalSeleccion = bootstrap.Modal.getInstance(document.getElementById("modalSeleccion"));
+    modalSeleccion.hide();
+
+    // Mostrar modal de confirmación
+    const modalConfirmacion = new bootstrap.Modal(document.getElementById("modalConfirmacion"));
+    modalConfirmacion.show();
+
+    // Ocultar modal de confirmación después de 5 segundos
+    setTimeout(() => {
+        modalConfirmacion.hide();
+
+        // Solución al problema de backdrop gris
+        const backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) backdrop.remove();
+
+        // Restaurar scroll y clics al body
+        document.body.classList.remove('modal-open');
+        document.body.style = "";
+    }, 8000);
+});
+
+// Mostrar modal al hacer click en Reservar
+document.querySelector(".btn-reservar").addEventListener("click", () => {
+    const modal = new bootstrap.Modal(document.getElementById("modalSeleccion"));
+    modal.show();
+});
+
+// Mostrar modal al hacer click en Reservar
+document.querySelector(".btn-reservar").addEventListener("click", () => {
+    // Limpiar campos
+    document.getElementById("formReserva").reset();
+
+    // Volver al valor inicial
+    document.getElementById("sala").value = "2D";
+    document.getElementById("cantidad").value = "1";
+    document.getElementById("dob").checked = true;
+
+    // Mostrar modal
+    const modal = new bootstrap.Modal(document.getElementById("modalSeleccion"));
+    modal.show();
+});
