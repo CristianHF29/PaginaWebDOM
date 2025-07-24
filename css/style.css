@@ -1,3 +1,14 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /*Esto deberia remover las flechas del Input type number*/
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
 .gallery-container {
   position: relative;
   overflow: hidden;
@@ -40,4 +51,3 @@
 .next {
   right: 10px;
 }
-
