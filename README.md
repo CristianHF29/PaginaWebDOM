@@ -26,27 +26,62 @@
 
 ---
 
-## 📁 Estructura del proyectoCineMax/
+## 📁 Estructura del proyecto
+
+```
+CineMax/
 │
-├── home.html # Página principal
+├── home.html                 # Página principal
 ├── /pages
-│ ├── billboard.html # Cartelera
-│ ├── details.html # Detalles de película y reserva
-│ ├── premieres.html # Próximos estrenos
-│ ├── deals.html # Promociones
-│ └── contact.html # Formulario de contacto
+│   ├── billboard.html        # Cartelera
+│   ├── details.html          # Detalles de película y reserva
+│   ├── premieres.html        # Próximos estrenos
+│   ├── deals.html            # Promociones
+│   └── contact.html          # Formulario de contacto
 │
-├── /assets # Recursos multimedia
-│ ├── imágenes (.png/.jpg)
-│ └── videos (.mp4)
+├── /assets                   # Recursos multimedia
+│   ├── imágenes (.png/.jpg)
+│   └── videos (.mp4)
 │
 ├── /css
-│ └── style.css # Estilos personalizados
+│   └── style.css             # Estilos personalizados
 │
 ├── /js
-│ ├── slidegallery.js
-│ ├── sound.js
-│ └── details.js
+│   ├── slidegallery.js
+│   ├── sound.js
+│   └── details.js
 │
-└── README.md # Documentación del proyecto
+└── README.md                 # Documentación del proyecto
+```
+
+---
+
+## 📦 Cómo ejecutar
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/tu-usuario/cinemax.git
+```
+
+2. Abre el archivo `home.html` en tu navegador (no necesita servidor local).
+
+---
+
+## 🌐 CDN utilizados
+
+```html
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+```
+
+---
+
+**© 2025 CineMax** — *Dónde cada historia cobra vida en la pantalla*
 
