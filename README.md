@@ -83,5 +83,13 @@ git clone https://github.com/tu-usuario/cinemax.git
 
 ---
 
+```
+Integrantes:
+
+Cristian Arturo Hernandez Flores
+Edwin Manuel Gonzalez Flores
+Juan Carlos Martinez Juarez
+```
+
 **© 2025 CineMax** — *Dónde cada historia cobra vida en la pantalla*
 
